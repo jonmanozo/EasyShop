@@ -17,6 +17,7 @@ To get the project
 
 # Please use github desktop for fech and pull 
     Dont push your code to the main branch and dev branch
+    Just use the frontend and backend branch
 
 # Please double check the branch before editing the code 
     git checkout frontend 
