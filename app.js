@@ -13,6 +13,10 @@ app.get('/', (req, res) =>{
     res.render('index')
 })
 
+app.get('/about', (req, res)=>{
+    res.send("About")
+})
+
 app.listen(3000, () => {
     console.log(`Example app listening on port http://127.0.0.1:3000/`)
 })
