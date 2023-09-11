@@ -11,6 +11,17 @@ app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
 app.use(express.static('public'))
 
+app.get('/login', (req, res) =>{
+    res.render('login')
+})
+
+app.get('/signup', (req, res) =>{
+    res.render('signup')
+})
+
+app.get('/about', (req, res)=>{
+    res.send("About")
+})
 
 
 app.get('/', (req, res) => {
@@ -28,13 +39,15 @@ app.get('/', (req, res) => {
                 featured.push(product)
             }
         }
-
-        res.send(productsDataArrayToObject(featured))
-
+        const data =  productsDataArrayToObject(featured);
+                        
+        res.render('index', {data});
 
     })
-})
+   
 
+        
+})
 
 app.use('/products', router)
 
