@@ -55,6 +55,10 @@ const axios = require('axios');
 //     }
 // }
 
+
+
+
+
 function productsDataArrayToObject(products){
     
     const arr = []
@@ -79,23 +83,5 @@ function productsDataArrayToObject(products){
 
 
 
-function categoryValueDataArrayToObject(categories){
-    
-    const arr2 = []
-    
-    for (const category of categories) {
-       
-        const categoryInfo = {
-            category: category
-        }
 
-        arr2.push(categoryInfo)
-        
-    }
-    
-    return arr2;
-    
-}
-    
-
-module.exports = {router,  productsDataArrayToObject, categoryValueDataArrayToObject}
+module.exports = {router,  productsDataArrayToObject}
