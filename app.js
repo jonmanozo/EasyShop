@@ -2,7 +2,6 @@ const express = require('express')
 const expressLayouts = require('express-ejs-layouts');
 const {router, productsDataArrayToObject} = require('./routes/product')
 const axios = require('axios')
-
 const Promise = require('promise');
 const app = express();
 
