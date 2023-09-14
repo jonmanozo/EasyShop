@@ -2,58 +2,58 @@ const express = require('express')
 const router = express.Router();
 const axios = require('axios');
 
-// router.get('/allproducts', (req, res) =>{
+router.get('/allproducts', (req, res) =>{
     
-//     const LIMIT = 20;
+    const LIMIT = 20;
 
-//     const PAGE = req.query.page ? (LIMIT * parseInt(req.query.page)) - LIMIT : 0
+    const PAGE = req.query.page ? (LIMIT * parseInt(req.query.page)) - LIMIT : 0
 
-//     axios.get(`https://dummyjson.com/products?limit=${LIMIT}&skip=${PAGE}`)
+    axios.get(`https://dummyjson.com/products?limit=${LIMIT}&skip=${PAGE}`)
     
-//     .then(function (response) {
+    .then(function (response) {
         
-//         const products = response.data.products;
+        const products = response.data.products;
         
-//         if(products.length <= 0) res.sendStatus(404)
+        if(products.length <= 0) res.sendStatus(404)
         
-//         const data = productsDataArrayToObject(products)
-//         res.sendStatus(200)
-//        // res.render('index', {product_data: data})
-//     })
-
-
-
-    
-// })
-
-// router.get('/products/:id', (req, res) => {
-    
-//     axios.get(`https://dummyjson.com/products/${req.params.id}`)
-    
-//     .then(function (response) {
+        const data = productsDataArrayToObject(products)
+        res.sendStatus(200)
         
-//         const product = response.data;
-//         const data = singleProductObject(product)
-//         res.send(req.params.id)
-//         // res.render('productInfoS', {product: data} )
-//     }).catch((err) =>{
-//         res.sendStatus(err.response.status)
-    
-//     })
-// })
+    })
 
-// function singleProductObject(p){
-//     return {
-//         id: p.id,
-//         title: p.title,
-//         desc: p.description,
-//         price: p.price,
-//         rating: p.rating,
-//         stock: p.stock,
-//         brand: p.brand,
-//         imgs : p.images
-//     }
-// }
+
+
+    
+})
+
+router.get('/products/:id', (req, res) => {
+    
+    axios.get(`https://dummyjson.com/products/${req.params.id}`)
+    
+    .then(function (response) {
+        
+        const product = response.data;
+        const data = singleProductObject(product)
+        res.send(req.params.id)
+        // res.render('productInfoS', {product: data} )
+    }).catch((err) =>{
+        res.sendStatus(err.response.status)
+    
+    })
+})
+
+function singleProductObject(p){
+    return {
+        id: p.id,
+        title: p.title,
+        desc: p.description,
+        price: p.price,
+        rating: p.rating,
+        stock: p.stock,
+        brand: p.brand,
+        imgs : p.images
+    }
+}
 
 
 
