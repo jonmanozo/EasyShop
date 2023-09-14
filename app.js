@@ -10,6 +10,8 @@ const bodyParser = require('body-parser')
 const session = require('express-session');
 
 
+
+
 const low = require('lowdb')
 const FileAsync = require('lowdb/adapters/FileAsync')
 const adapter = new FileAsync('db.json')
@@ -19,6 +21,9 @@ app.set('layout', 'layouts/layout');
 
 app.use(expressLayouts);
 app.use(express.static('public'))
+
+const productRouter = require('./routes/productDetails');
+app.use('/products', productRouter);
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -121,3 +126,4 @@ low(adapter).then(function (db) {
     })
     
 })
+
