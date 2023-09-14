@@ -26,34 +26,36 @@ const axios = require('axios');
     
 // })
 
-// router.get('/products/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     
-//     axios.get(`https://dummyjson.com/products/${req.params.id}`)
     
-//     .then(function (response) {
-        
-//         const product = response.data;
-//         const data = singleProductObject(product)
-//         res.send(req.params.id)
-//         // res.render('productInfoS', {product: data} )
-//     }).catch((err) =>{
-//         res.sendStatus(err.response.status)
-    
-//     })
-// })
+    axios.get(`https://dummyjson.com/products/${req.params.id}`)
 
-// function singleProductObject(p){
-//     return {
-//         id: p.id,
-//         title: p.title,
-//         desc: p.description,
-//         price: p.price,
-//         rating: p.rating,
-//         stock: p.stock,
-//         brand: p.brand,
-//         imgs : p.images
-//     }
-// }
+    .then(function (response) {
+        
+        const product = response.data;
+        const data = singleProductObject(product)
+
+        res.render('product_info', {product: data} )
+        
+    }).catch((err) =>{
+        res.sendStatus(err.response.status)
+    
+    })
+})
+
+function singleProductObject(p){
+    return {
+        id: p.id,
+        title: p.title,
+        desc: p.description,
+        price: p.price,
+        rating: p.rating,
+        stock: p.stock,
+        brand: p.brand,
+        imgs : p.images
+    }
+}
 
 
 
