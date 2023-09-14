@@ -1,4 +1,152 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1694532104976,
+      "fName": "aljon",
+      "lName": "manozo",
+      "email": "sampleemail@gmail.com",
+      "password": "$2b$10$.K6gfgi/90YFlTwTSKyU/uWLU0HfTAc13LEWeUfVNi90jR1KXANTS"
+    },
+    {
+      "id": 1694535380656,
+      "fName": "luffy",
+      "lName": "monkey",
+      "email": "monkeydluffy@gmail.com",
+      "password": "$2b$10$g7k/lTFqtYpdm.EFfmFd6u2oHwNyu8xrn2q.X94UtlI/bH4o2H9IO"
+    },
+    {
+      "id": 1694535447934,
+      "fName": "luffy",
+      "lName": "monkey",
+      "email": "dluffymonkey@gmail.com",
+      "password": "$2b$10$F0lj9a1Un1JK75xjJu9AZed0KJJapCAbdG7WlyWisIMgKSq/dp1pm"
+    },
+    {
+      "id": 1694535479051,
+      "fName": "luffy",
+      "lName": "monkey",
+      "email": "dluffymonkey23@gmail.com",
+      "password": "$2b$10$GSQr6hWND6Nvtp31/9b84.ja14VS756aI/P44a1HNjfTpcGZ4Az6y"
+    },
+    {
+      "id": 1694535560177,
+      "fName": "luffy",
+      "lName": "monkey",
+      "email": "dluffymonke23y23@gmail.com",
+      "password": "$2b$10$zZxng/6pOEMsIim2exeYru/NIeL0V3BvBoBDiFYHesHh8RemHsYZq"
+    },
+    {
+      "id": 1694535709227,
+      "fName": "aasdx",
+      "lName": "cqaeasdca",
+      "email": "user@user.com",
+      "password": "$2b$10$hO3VRRbPIHtraY/zD.JhrO2T60KJMY15YkcFmFCHkdeRZlhmA3mxi"
+    },
+    {
+      "id": 1694536253360,
+      "fName": "123as",
+      "lName": "d123asd",
+      "email": "monkeydluffy@gmail.com12",
+      "password": "$2b$10$b04/hAxV1TmfLUzbdYTjz.vGUsDB0b581jd/UcgCostvzIy7vzvL2"
+    },
+    {
+      "id": 1694536287116,
+      "fName": "123as",
+      "lName": "d123asd",
+      "email": "monkeydluffy123@gmail.com12",
+      "password": "$2b$10$yVTtEI3pm/M66w73T2LeP.dpFkfeaCUMoC.CmGhTaEZjYUKvTaOma"
+    },
+    {
+      "id": 1694536334063,
+      "fName": "123as1",
+      "lName": "d123asd",
+      "email": "monkeasdydluffy123@gmail.com12",
+      "password": "$2b$10$aSrB5Bl9aDrhiwzDhLtGr.x1p0hDLKX.QWyUQ2Cg3hb6zcaFKn5Cq"
+    },
+    {
+      "id": 1694536370753,
+      "fName": "123as1",
+      "lName": "d123asd",
+      "email": "monkeasdyasddluffy123@gmail.com12",
+      "password": "$2b$10$KMDDpB51hrIjCEaE83oUluUCFiW14hTQV0OUztE.BCvtoKv23uReC"
+    },
+    {
+      "id": 1694536435085,
+      "fName": "123asd",
+      "lName": "123asd",
+      "email": "yowmanozo2311@gmail.com",
+      "password": "$2b$10$R7TVIgRLKkSo1Ic1lPymrOuWcTYiyy9XwR5/Nl7XjYnyImajg0LkC"
+    },
+    {
+      "id": 1694536465056,
+      "fName": "123asd",
+      "lName": "2asdZXC",
+      "email": "asd@asd.c2om",
+      "password": "$2b$10$PJcKw6z.wjOFkdxUzGdmjextRnlstfe5FLOIsjghyWBvpocL7qq8y"
+    },
+    {
+      "id": 1694536671245,
+      "fName": "123a",
+      "lName": "asdasd",
+      "email": "12asd@asd.cas",
+      "password": "$2b$10$0z9BVMPnM7/K0URSIZM5D.L5ZxKynHgfos.a1gqgmDmMKkt7c7A6C"
+    },
+    {
+      "id": 1694537106251,
+      "fName": "123asd",
+      "lName": "123asd",
+      "email": "yowmanozo1232311@gmail.com",
+      "password": "$2b$10$uwdcboYzog0qBKZgd1/s6.KLLo0btzMWoGFzmradD8BuOr9fWinDa"
+    },
+    {
+      "id": 1694537186846,
+      "fName": "yow",
+      "lName": "asxczxc",
+      "email": "roronoa@gmail.com",
+      "password": "$2b$10$ljNk/bFYPb4CnJSg6kWUS.KffxuVFVv7dFGIYznDqUIKYxFiBPjZ6"
+    },
+    {
+      "id": 1694537254462,
+      "fName": "123asd",
+      "lName": "123asd",
+      "email": "123asd@qawedad.caiosdjk",
+      "password": "$2b$10$dIpN9EBSRzOOySXWHpTp1u92eIEdi4W6YeLPt68Y83ziJyz59xG0q"
+    },
+    {
+      "id": 1694537389881,
+      "fName": "123asd",
+      "lName": "123asd",
+      "email": "213aasd@asd.casd",
+      "password": "$2b$10$lHfT526Ub76396uuSO6Ba.we.j9CCezDDP1eQ/4e3y.XYEDDFusk6"
+    },
+    {
+      "id": 1694537431806,
+      "fName": "123asd",
+      "lName": "123asd",
+      "email": "123asd@qa2awedad.caiosdjk",
+      "password": "$2b$10$plE3D5DtIj/dW7XYqc1gl.avCI0k6PHdYPue5NYYzRXuMfHE2JxCm"
+    },
+    {
+      "id": 1694537469792,
+      "fName": "123asd",
+      "lName": "123asd",
+      "email": "123asd@qa2aweasddad.caiosdjk",
+      "password": "$2b$10$LJVZckTqnxTKsoXp2D8c1uvgMxcHNeZfN6WcttDOk9d4OYp.7RkYK"
+    },
+    {
+      "id": 1694585725280,
+      "fName": "yow",
+      "lName": "asd",
+      "email": "2@asd.capo",
+      "password": "$2b$10$Ws8AbPZLfGB8/gKtiTqTU.Zh6xCISval9f1y1XEOnImtdx9zHgpCi"
+    },
+    {
+      "id": 1694591622142,
+      "fName": "Yqwe",
+      "lName": "qweasd",
+      "email": "qaw@Yow.caws",
+      "password": "$2b$10$gaca7xGKZjbT5aVvpVKc5.m0UBTI4jscWLTUuRpGFpEMorA6sRIQ."
+    }
+  ],
   "carts": []
 }
