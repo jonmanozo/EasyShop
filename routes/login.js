@@ -41,15 +41,18 @@ router.post('/', (req, res) => {
                         email: user.email              
                     }
     
-                    req.session.user = userInfo // save it to req.session
-                    
-                    req.session.save(function(err){ //save the session berfore redirecting 
+                    req.session.user = userInfo
+
+                    req.session.userEmail = userInfo.email
+                    const userEmail  = req.session.userEmail
+                    req.session.save(function(err){
 
                         if(err) {
                             res.send('Something went wrong');
     
                         }
-                        console.log(req.session.user)
+                        console.log(req.session.user)                       
+
                         res.redirect('/')
                     })
     
@@ -57,13 +60,17 @@ router.post('/', (req, res) => {
             }
             else{
                 // Password not match
-                res.send('password not match')
+
+                res.render('login', {alert: `<div class="alert alert-danger" role="alert">Password is incorrect!</div>`});
+
             }
         })
         
     }else{
         // No email found 
-        res.send('No email found')
+
+        res.render('login', {alert: `<div class="alert alert-danger" role="alert">Email is not Registered!</div>`});
+
         
     }
 

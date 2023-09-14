@@ -10,9 +10,6 @@ const categoryRoute = require('./routes/category')
 const bodyParser = require('body-parser')
 const session = require('express-session');
 
-
-
-
 const low = require('lowdb')
 const FileAsync = require('lowdb/adapters/FileAsync')
 const adapter = new FileAsync('db.json')
@@ -57,13 +54,15 @@ app.get('/' , (req, res) => {
                     featured.push(product)
                 }
             }
-
-            const product = productsDataArrayToObject(featured)
-
-            res.render('index', {products: product, categories: categoriesResult});
-
-        });
-});
+            
+            const userEmail = req.session.userEmail;
+            const data2 =  productsDataArrayToObject(featured);
+            res.render('index', {data2, categories, userEmail});
+        })
+ 
+    });
+    
+    
 
 app.get('/about', (req, res)=>{
     res.send("About")
