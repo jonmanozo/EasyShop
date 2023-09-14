@@ -1,7 +1,7 @@
 
 .LoginCon{
     width: 60%;
-    height: 700px;
+    height: 760px;
     float: left;
     margin-left:20%;
     border-radius: 20px;
@@ -40,4 +40,18 @@ h4{
 .LogInBut{
     width: 100%;
     margin-top: 20px;
+}
+
+.alert {
+    text-align: center;
+}
+
+
+
+.PasswordMustBe{
+    color: green;
+}
+
+.signUpModal{
+    margin-top: 400px;
 }

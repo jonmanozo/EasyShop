@@ -49,10 +49,11 @@ app.get('/', (req, res) => {
                 featured.push(product)
             }
         }
+        
+        const userEmail = req.session.userEmail;
         const data2 =  productsDataArrayToObject(featured);
-        
-        res.render('index', {data2, categories});
-        
+        res.render('index', {data2, categories, userEmail});
+ 
     });
     
     
