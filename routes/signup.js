@@ -10,6 +10,7 @@ router.post('/', (req, res)=>{
 
     const db = req.app.get('DB');
 
+
     const {FirstName, LastName, Email, password, RepeatPass } = req.body;
     
     const email = db.get('users').find({email : Email}).value()
