@@ -11,7 +11,7 @@
       </div>
       <div id="NavBar" class=" box effect7">
           <div class="NavMenu">
-              <a class="NavMenuLink" href="product.php">
+              <a class="NavMenuLink" href="/product">
                   <div id="NavMenuName">
                       <center>PRODUCTS</center>
                   </div>
@@ -24,7 +24,7 @@
                   </button>
                     <div class="dropdown-menu DropdownCategory">
                       <% categories.forEach ( post =>{ %>
-                        <a class="dropdown-item categoryMenu" href="/<%= post  %>"><%= post  %></a>
+                        <a class="dropdown-item categoryMenu" href="category/<%= post  %>"><%= post  %></a>
                       <% }) %>
                   </div>
           </div>
@@ -93,10 +93,11 @@
       <div id="ContentContainer">
           <div id="TitleCon">FEATURED PRODUCTS</div>
           <div id="CartContainer">
-              <% data2.forEach ( post =>{ %>
+              <% products.forEach ( post =>{ %>
                   <div class="CartBox">
+                    
                       <div class="CartImgBox">
-                          <a href="#"><div id="CartImg"><img src="<%= post.image  %>" alt="" style="width: 100%; height: 100%;"></div></a>
+                      <a href="/products/<%=post.id%>"><div id="CartImg"><img src="<%= post.image  %>" alt="" style="width: 100%; height: 100%;"></div></a>
                       </div>
                       <div class="ProductName"><strong><%= post.title %></strong></div>
                       <div class="ProductCartDetails">

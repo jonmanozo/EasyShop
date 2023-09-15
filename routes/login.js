@@ -4,8 +4,7 @@ const bcrypt = require('bcrypt');
 
 router.get('/', (req, res) => {
     
-    if(req.session.user){
-        console.log(req.session.user)
+    if(req.session.user){ // if we already have a user redirect to home page
         res.redirect('/')
         return
     }
@@ -25,9 +24,9 @@ router.post('/', (req, res) => {
     if (user) {
         
         bcrypt.compare(password, user.password, (err, result) => {
-            
+            // if password is match
             if(result){
-        
+                // create a session 
                 req.session.regenerate(function (err) {
                     
                     if(err) {
