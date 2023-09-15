@@ -1,12 +1,12 @@
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts');
-const {router, productsDataArrayToObject} = require('./routes/product')
 const axios = require('axios')
 const Promise = require('promise');
 const app = express();
 const loginRoute = require('./routes/login')
 const signUpRoute = require('./routes/signup')
 const categoryRoute = require('./routes/category')
+const {router, productsDataArrayToObject} = require('./routes/product')
 const bodyParser = require('body-parser')
 const session = require('express-session');
 
@@ -19,9 +19,6 @@ app.set('layout', 'layouts/layout');
 
 app.use(expressLayouts);
 app.use(express.static('public'))
-
-const productRouter = require('./routes/productDetails');
-app.use('/products', productRouter);
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -56,8 +53,9 @@ app.get('/' , (req, res) => {
             }
             
             const userEmail = req.session.userEmail;
-            const data2 =  productsDataArrayToObject(featured);
-            res.render('index', {data2, categories, userEmail});
+            const fetureProducts =  productsDataArrayToObject(featured);
+           
+            res.render('index', {products: fetureProducts, categories : categoriesResult , userEmail: userEmail});
         })
  
     });
@@ -79,6 +77,7 @@ app.get('/logout', (req, res) => {
         res.redirect('/')
     })
 })
+
 
 low(adapter).then(function (db) {
     db.defaults({users : [], carts : []}).write()

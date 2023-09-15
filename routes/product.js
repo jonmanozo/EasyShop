@@ -23,7 +23,7 @@ router.get('/allproducts', (req, res) =>{
     
 })
 
-router.get('/products/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     
     axios.get(`https://dummyjson.com/products/${req.params.id}`)
     
@@ -32,11 +32,13 @@ router.get('/products/:id', (req, res) => {
         const product = response.data;
         const data = singleProductObject(product)
 
-        res.render('product_info', {product: data} )
+        const email = req.session.userEmail
+       // console.log(product)
+        res.render('product_details', {product: data ,  userEmail: email } )
         
     }).catch((err) =>{
-        res.sendStatus(err.response.status)
-    
+        
+        console.error('Something went Wrong' + err)
     })
 })
 
@@ -45,6 +47,7 @@ function singleProductObject(p){
         id: p.id,
         title: p.title,
         desc: p.description,
+        discount : p.discountPercentage,
         price: p.price,
         rating: p.rating,
         stock: p.stock,
@@ -52,10 +55,6 @@ function singleProductObject(p){
         imgs : p.images
     }
 }
-
-
-
-
 
 function productsDataArrayToObject(products){
     
