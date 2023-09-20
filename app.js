@@ -63,6 +63,7 @@ app.get('/', (req, res) => {
     
 })
 
+
 app.get('/about', (req, res)=>{
     res.send("About")
 })
@@ -126,4 +127,12 @@ low(adapter).then(function (db) {
     })
     
 })
+
+
+
+// ____________________SHIPPING INFO____________________
+app.get('/shippinginfo', (req, res) => {
+    res.render('shippinginfo');
+});
+
 

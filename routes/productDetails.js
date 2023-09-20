@@ -5,6 +5,7 @@ const axios = require('axios');
 const { productsDataArrayToObject } = require('./product');
 
 
+
 router.get('/productDetails/:id', (req, res) => {
     const productId = req.params.id;
 
@@ -20,6 +21,7 @@ router.get('/productDetails/:id', (req, res) => {
             res.sendStatus(500); 
         });
 });
+
 
 
 
