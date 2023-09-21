@@ -74,12 +74,13 @@
                 <input type="hidden" id="productQty" name="productQty" value="1">
                 <input type="hidden" id="productTotal" name="total" value="<%= product.price %>">
                 <p id="total" class="m-0" style="font-size: medium;"><strong>Total:</strong> <i>&#8369;<%= product.price %></i></p>
-                <input type="button" class="btn btn-outline-success" value="Add Card">
+                <input id="add_cart_btn" type="button" class="btn btn-outline-success" value="Add Card">
                 <input type="submit" class="btn btn-outline-warning" value="Buy Now">
             </div>
         </form>
     </div>
     <!--TODO: Ralated products -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/product.js"></script>
 </div>
 
