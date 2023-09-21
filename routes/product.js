@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 const axios = require('axios');
 
-router.get('/allproducts', (req, res) =>{
+router.get('/', (req, res) =>{
     
     const LIMIT = 20;
 
@@ -17,7 +17,8 @@ router.get('/allproducts', (req, res) =>{
         if(products.length <= 0) res.sendStatus(404)
         
         const data = productsDataArrayToObject(products)
-        res.sendStatus(200)
+        
+        res.render('products',  {categories: req.app.get('categories'), products: data})
         
     })
     

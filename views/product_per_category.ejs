@@ -11,7 +11,7 @@
         </div>
         <div id="NavBar" class=" box effect7">
             <div class="NavMenu">
-                <a class="NavMenuLink" href="product.php">
+                <a class="NavMenuLink" href="/products">
                     <div id="NavMenuName">
                         <center>PRODUCTS</center>
                     </div>
@@ -40,19 +40,7 @@
             <div class="TitleCon"><%= category %> PRODUCTS</div>
             <div id="CartContainer">
                 <% products.forEach ( post =>{ %>
-                    <div class="CartBox">
-                        <div class="CartImgBox">
-                            <a href=""><div id="CartImg"><img src="<%= post.image  %>" alt="" style="width: 100%; height: 100%;"></div></a>
-                        </div>
-                        <div class="ProductName"><strong><%= post.title %></strong></div>
-                        <div class="ProductCartDetails">
-                            <div class="ProductPrice">&#8369; <%= post.price %>.00</div>
-                            <div class="ProductRating"><%= post.rating %> % Ratings</div>
-                            <div class="CartButCon">
-                                    <div class="CartBut"><center><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">Add to cart</span></center></div>
-                            </div>
-                        </div>
-                    </div>		
+                    <%- include('components/product', {product: post}) %>		
                 <% }); %>
                     
             </div>
