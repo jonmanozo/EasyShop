@@ -2,15 +2,15 @@ const express = require('express')
 const router = express.Router();
 const bcrypt = require('bcrypt');
 
+
 router.get('/', (req, res) => {
     
-    if(req.session.user){
-        console.log(req.session.user)
+    if(req.session.user){ // if we already have a user redirect to home page
         res.redirect('/')
         return
     }
-    
-    res.render('login')
+
+    res.render('login', {categories: req.app.get('categories'), userEmail: req.app.get('userEmail')})
 })
 
 
@@ -25,9 +25,9 @@ router.post('/', (req, res) => {
     if (user) {
         
         bcrypt.compare(password, user.password, (err, result) => {
-            
+            // if password is match
             if(result){
-        
+                // create a session 
                 req.session.regenerate(function (err) {
                     
                     if(err) {
@@ -55,6 +55,7 @@ router.post('/', (req, res) => {
                         console.log(req.session.user)                       
 
                         res.redirect('/')
+
                     })
     
                 })
@@ -62,7 +63,7 @@ router.post('/', (req, res) => {
             else{
                 // Password not match
 
-                res.render('login', {alert: `<div class="alert alert-danger" role="alert">Password is incorrect!</div>`});
+                res.render('login', {userEmail: req.app.get('userEmail'), categories: req.app.get('categories'), alert: ` <div class="AlertMessage" ><i class="bi bi-exclamation-octagon-fill"></i><p>Your account and/or password is incorrect, please try again </p></div> `});
 
             }
         })
@@ -70,7 +71,7 @@ router.post('/', (req, res) => {
     }else{
         // No email found 
 
-        res.render('login', {alert: `<div class="alert alert-danger" role="alert">Email is not Registered!</div>`});
+        res.render('login', {userEmail: req.app.get('userEmail'), categories: req.app.get('categories'), alert: ` <div class="AlertMessage" ><i class="bi bi-exclamation-octagon-fill"></i><p>Email is not Registered</p></div> `});
 
         
     }
