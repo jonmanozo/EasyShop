@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router();
+const {getCartCount} = require('./cart')
 const axios = require('axios');
 
 router.get('/', (req, res) =>{
@@ -17,8 +18,10 @@ router.get('/', (req, res) =>{
         if(products.length <= 0) res.sendStatus(404)
         
         const data = productsDataArrayToObject(products)
-        
-        res.render('products',  {categories: req.app.get('categories'), products: data})
+
+        const cartCount = getCartCount(req.app, req.session.user)
+
+        res.render('products',  {categories: req.app.get('categories'), products: data, cartItems: cartCount})
         
     })
     
@@ -34,8 +37,11 @@ router.get('/:id', (req, res) => {
         const data = singleProductObject(product)
 
         const email = req.session.userEmail
+
+        const cartCount = getCartCount(req.app, req.session.user)
+
        // console.log(product)
-        res.render('product_details', {product: data ,  userEmail: email } )
+        res.render('product_details', {product: data ,  userEmail: email, cartItems: cartCount} )
         
     }).catch((err) =>{
         

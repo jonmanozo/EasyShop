@@ -31,6 +31,7 @@ app.use(session({
     saveUninitialized: false
 }))
 
+
 app.get('/' , (req, res) => {
     
     Promise.all([
@@ -55,12 +56,14 @@ app.get('/' , (req, res) => {
             
             const userEmail = req.session.userEmail;
             const fetureProducts =  productsDataArrayToObject(featured);
-           
-            res.render('index', {products: fetureProducts, categories : categoriesResult , userEmail: userEmail});
+            
+            
+            const cartCount = cartRouter.getCartCount(req.app, req.session.user)
+
+            res.render('index', {products: fetureProducts, categories : categoriesResult , userEmail: userEmail, cartItems: cartCount});
         })
  
-    });
-    
+});
     
 app.get('/shippinginfo', (req, res) => {
     res.render('shippinginfo');
@@ -81,9 +84,6 @@ app.get('/logout', (req, res) => {
         res.redirect('/')
     })
 })
-
-//get user info
-
 
 
 

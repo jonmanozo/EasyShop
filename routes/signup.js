@@ -19,16 +19,24 @@ router.post('/', (req, res)=>{
                 if(!email){
                     
                     bcrypt.hash(password, 10, (err, hashPassword)=>{
+                        const ID = Date.now()
                         db.get('users').push(
                             {
-                                id: Date.now(),
+                                id: ID,
                                 fName: FirstName,
                                 lName: LastName,
                                 email : Email,
                                 password: hashPassword
                             }
-
-                            ).write()
+                            ).write().then(() =>{
+                                db.get('carts').push(
+                                    {
+                                        cartId : ID,
+                                        cart : []
+                                    }
+                                ).write()
+                            })
+                        
                         const SignUpAlert  = `
                         <script>
                             $(document).ready(function(){
