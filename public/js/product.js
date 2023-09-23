@@ -11,6 +11,11 @@ addCartBtn.onclick = function(e) {
 
     const baseURL = window.location.origin
     
+    if(!userEmail){
+        window.location.replace(`${baseURL}/login`)
+        return
+    }
+
     const data = {
         email: userEmail.innerText,
         prodId: Number(productId.value),
