@@ -1,7 +1,7 @@
 {
   "name": "easyshop",
   "version": "1.0.0",
-  "description": "",
+  "description": "To get the project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

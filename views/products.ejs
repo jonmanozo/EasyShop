@@ -1,54 +1,6 @@
-<div id="LogoContainer">
-    <div id="LogoImg"><img src="/image/logo2.png" alt=""></div>
-    <div id="LogoDetails"></div>
-    <div id="SearchBox">
-      <form action="/search" method="POST">
-        <input class="form-control" name="search" id="SearchBoxIns" placeholder="Search Product Here">
-        <button type="submit" id="SubmitBut" name="search">SEARCH</button>
-      </form>
-    </div>
-  </div>
-  <div id="NavBar" class=" box effect7">
-    <div class="NavMenu">
-      <a class="NavMenuLink" href="/products">
-        <div id="NavMenuName">
-          <center>PRODUCTS</center>
-        </div>
-      </a>
-    </div>
-    <div class="NavMenu"><a class="NavMenuLink" href="#ContentContainer">
-        <div class="NavMenuName">
-          <center>FEATURED PRODUCTS</center>
-        </div>
-      </a></div>
-    <div class="NavMenu">
-      <button type="button" class=" CategBut dropdown-toggle" data-bs-toggle="dropdown">
-        CATEGORIES
-      </button>
-      <div class="dropdown-menu DropdownCategory">
-        <% categories.forEach ( post=>{ %>
-          <a class="dropdown-item categoryMenu" href="category/<%= post  %>">
-            <%= post %>
-          </a>
-          <% }) %>
-      </div>
-    </div>
-  
-  
-    <div class="NavMenu"><a class="NavMenuLink" href="/signup">
-        <div class="NavMenuName">
-          <center>REGISTER ACCOUNT</center>
-        </div>
-      </a></div>
-    <div class="NavMenu"><a class="NavMenuLink" href="/login">
-        <div class="NavMenuName">
-          <center>LOG IN HERE!</center>
-        </div>
-      </a></div>
-  </div>
 
-<div class="m-auto" style="width: 80%;">
-    <div  id="TitleCon" style="float: none;">All product</div>
+<div class="m-auto">
+    <div  class="TitleCon" style="margin-top: 50px;">All product</div>
     <div class="d-flex flex-wrap gap-1 justify-content-center mt-3">
         <% products.forEach((item)=>{ %>
             <%- include('components/product_view', {product: item}) %>

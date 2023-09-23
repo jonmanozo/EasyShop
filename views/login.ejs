@@ -1,30 +1,27 @@
 
-
 <div class="LoginCon">
-    <div class="LoginLeftCon">
-   
-    </div>
+
     <div class="LoginFormCon ">
-        <div class="LoginTitle">
-            <h4>LOG IN ACCOUNT</h4>
-            <%- locals.alert %>
-        </div>
-        <form action="/login" method="POST">
-            <div class="mb-3 mt-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-              </div>
-              <div class="mb-3">
-                <label for="pwd" class="form-label">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
-              </div>
-              <div class="mb-3">
-                <button type="submit" class="btn btn-primary LogInBut">LOG IN</button>
-              </div>
-               <div class="form-check mb-3" style="text-align: center;">
-                    <p class="RegisterHere">Don't have an account?</p><a href="/signup">Register here</a>
-              </div>
-        </form>
+      <div class="LoginTitle">
+       <p>LOG IN HERE</p>
+      
+       <%- locals.alert %>   
+      </div>
+       
+      <form class="LogInFormBox" action="/login" method="POST">
+          <div class="mb-3 mt-3 LogInput">
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="mb-3 LogInput">
+              <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+            </div>
+            <div class="mb-3 LogInput">
+              <button type="submit" class="btn btn-primary LogInBut">LOG IN</button>
+            </div>
+            <div class="form-check mb-3 LogInput" style="text-align: center;">
+                  <p class="RegisterHere">Don't have an account?</p><a href="/signup">Sign Up</a>
+            </div>
+      </form>
     </div>
 
 

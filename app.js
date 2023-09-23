@@ -54,7 +54,8 @@ app.get('/' , (req, res) => {
                 }
             }
             
-            const userEmail = req.session.userEmail;
+            const userEmail = req.session.userEmail
+            app.set('userEmail', userEmail)
             const fetureProducts =  productsDataArrayToObject(featured);
             
             
@@ -79,7 +80,7 @@ app.use('/login', loginRoute.router )
 app.use('/signup', signUpRoute.router)
 app.use('/cart', cartRouter.router)
 
-app.get('/logout', (req, res) => {
+app.post('/logout', (req, res) => {
     req.session.destroy(function(err) {
         res.redirect('/')
     })

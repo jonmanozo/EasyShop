@@ -1,43 +1,7 @@
 
-        <div id="LogoContainer">
-          <div id="LogoImg"><img src="/image/logo2.png" alt=""></div>
-          <div id="LogoDetails"></div>
-          <div id="SearchBox">
-              <form action="/search" method="POST">
-                  <input class="form-control" name="search" id="SearchBoxIns" placeholder="Search Product Here">
-                  <button type="submit" id="SubmitBut" name="search">SEARCH</button>
-              </form>
-          </div>
-      </div>
-      <div id="NavBar" class=" box effect7">
-          <div class="NavMenu">
-              <a class="NavMenuLink" href="/products">
-                  <div id="NavMenuName">
-                      <center>PRODUCTS</center>
-                  </div>
-              </a>
-          </div>
-          <div class="NavMenu"><a class="NavMenuLink" href="#ContentContainer"><div class="NavMenuName"><center>FEATURED PRODUCTS</center></div></a></div>
-          <div class="NavMenu">
-                  <button type="button" class=" CategBut dropdown-toggle" data-bs-toggle="dropdown">
-                    CATEGORIES
-                  </button>
-                    <div class="dropdown-menu DropdownCategory">
-                      <% categories.forEach ( post =>{ %>
-                        <a class="dropdown-item categoryMenu" href="category/<%= post  %>"><%= post  %></a>
-                      <% }) %>
-                  </div>
 
-          </div>
-
-
-          <div class="NavMenu"><a class="NavMenuLink" href="/signup"><div class="NavMenuName"><center>REGISTER ACCOUNT</center></div></a></div>
-          <div class="NavMenu"><a class="NavMenuLink" href="/login"><div class="NavMenuName"><center>LOG IN HERE!</center></div></a></div>
-      </div>
-      
-      
-      <div id="SliderContainer">
-          <div id="SliderLeft">
+      <div class="SliderContainer">
+          <div class="SliderLeft">
               <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -47,24 +11,15 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <img src="image/image1.jpg" class="d-block w-100" alt="...">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                      </div>
+                
                     </div>
                     <div class="carousel-item">
                       <img src="image/image2.jpg" class="d-block w-100" alt="...">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                      </div>
+                      
                     </div>
                     <div class="carousel-item">
                       <img src="image/image3.jpg" class="d-block w-100" alt="...">
-                      <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                      </div>
+                      
                     </div>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -78,27 +33,18 @@
                 </div>
               
           </div>
-          <div id="SliderRight">
-              <div id="Menu1">
-                  <div id="Menu1Img"></div>
-              </div>
-              <div id="Menu2">
-                  <div id="Menu1Img"></div>
-              </div>
-              <div id="Menu3">
-                  <div id="Menu1Img"></div>
-              </div>
-          </div>
+         
       </div>
       
-      <div id="ContentContainer">
-          <div id="TitleCon">FEATURED PRODUCTS</div>
-          <div id="CartContainer">
-              <% products.forEach ( post =>{ %>
-                  <%- include('components/product', {product: post}) %>
-              <% }); %>
-                  
+      <div class="ContentContainer">
+        <div class="m-auto">
+          <div  class="TitleCon" >FEATURED PRODUCTS</div>
+          <div class="d-flex flex-wrap gap-1 justify-content-center mt-3">
+                <% products.forEach ( post =>{ %>
+                    <%- include('components/product', {product: post}) %>
+                <% }); %>
+                    
+            </div>
           </div>
-      
       </div>
      

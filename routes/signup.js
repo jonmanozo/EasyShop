@@ -3,8 +3,12 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 
 router.get('/', (req, res) => {
-    res.render('signup')
+
+     res.render('signup', {userEmail: req.app.get('userEmail'), categories: req.app.get('categories')})
+   
 })
+
+
 
 router.post('/', (req, res)=>{
 
@@ -37,21 +41,15 @@ router.post('/', (req, res)=>{
                                 ).write()
                             })
                         
-                        const SignUpAlert  = `
-                        <script>
-                            $(document).ready(function(){
-                                $("#myModal").modal('show');
-                            });
-                        </script>`
-                        res.render('signup', {SignUpAlert})
+                        res.redirect('/')
                     })
 
                 }else{
-                    res.render('signup', {alert: `<div class="alert alert-danger" role="alert">Email already exist!</div>`});
+                    res.render('signup', {userEmail: req.app.get('userEmail'), categories: req.app.get('categories'), alert: ` <div class="AlertMessage" ><i class="bi bi-exclamation-octagon-fill"></i><p>Email already exist</p></div> `});
                 }
     }else{
 
-        res.render('signup', {alert: `<div class="alert alert-danger" role="alert">Confirm Password  do not matched!</div>`});
+        res.render('signup', {userEmail: req.app.get('userEmail'), categories: req.app.get('categories'), alert: ` <div class="AlertMessage" ><i class="bi bi-exclamation-octagon-fill"></i><p>Password and Confirm password doesn't matched</p></div> `});
 
     }
 

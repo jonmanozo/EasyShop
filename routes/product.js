@@ -18,10 +18,8 @@ router.get('/', (req, res) =>{
         if(products.length <= 0) res.sendStatus(404)
         
         const data = productsDataArrayToObject(products)
-
-        const cartCount = getCartCount(req.app, req.session.user)
-
-        res.render('products',  {categories: req.app.get('categories'), products: data, cartItems: cartCount})
+        
+        res.render('products',  {userEmail: req.app.get('userEmail'),categories: req.app.get('categories'), products: data})
         
     })
     
@@ -41,7 +39,7 @@ router.get('/:id', (req, res) => {
         const cartCount = getCartCount(req.app, req.session.user)
 
        // console.log(product)
-        res.render('product_details', {product: data ,  userEmail: email, cartItems: cartCount} )
+        res.render('product_details', {product: data ,  userEmail: email, categories: req.app.get('categories') } )
         
     }).catch((err) =>{
         

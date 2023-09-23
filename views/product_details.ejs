@@ -1,8 +1,8 @@
 
-<div class="d-flex gap-1 m-3">
+<div class="d-flex ProductDetailsCon">
     <!-- Product Images -->
     
-    <div style="width: 25%;">
+    <div class="ProductDetailsCarouselCon">
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -30,57 +30,53 @@
     </div>
     
     <!-- Product Info -->
-    <div style="width: 55%; padding: 1rem;">
-        <div class="mb-1 d-flex flex-column gap-2">
-            <h5><%= product.title %></h5>
+   
+    <div class="d-flex flex-column ProductInfoBox"  >  
+        <div class="ProductInfo">
+            <div class="mb-1 d-flex flex-column gap-2">
+                <h5><%= product.title %></h5>
+                <div>
+                    
+                    <p class="m-0">Rating: <%= product.rating %></p>
+                    <p class="m-0">Stocks: <%= product.stock %> </p>
+                    <!-- <p class="m-0">Brand:</p> -->
+                    
+                </div>
+                <div style="border: 1px solid lightblue;"></div>
+                <div>
+                    <%= product.desc %>
+                </div>
+            </div>
+       
             <div>
-                
-                <p class="m-0">Rating: <%= product.rating %></p>
-                <p class="m-0">Stocks: <%= product.stock %> </p>
-                <!-- <p class="m-0">Brand:</p> -->
-                
+                <div style="display: flex; gap: 7px;">
+                    <p>&#8369; </p> 
+                    <h2 id="price" style="margin: 0px;"><%= product.price %></h2>
+                    <p style="margin: 0px;"><sup><%= product.discount %>% discount</sup></p>
+                </div>
+                <h4 style="color: #007600; text-align: start;">In Stock</h4>
             </div>
-            <div style="border: 1px solid lightblue;"></div>
-            <div>
-                <%= product.desc %>
-            </div>
-        </div>
-    </div>
-    <!-- Cart Details -->
-    <div class="d-flex flex-column gap-2" style="width: 20%; padding: 1rem; border: 1px solid lightgray;" >  
-        <div>
-            <div style="display: flex; gap: 7px;">
-                <p>&#8369; </p> 
-                <h2 id="price" style="margin: 0px;"><%= product.price %></h2>
-                <p style="margin: 0px;"><sup><%= product.discount %>% discount</sup></p>
-            </div>
-            <h4 style="color: #007600; text-align: start;">In Stock</h4>
-        </div>
+       </div>
         
         <div class="d-flex gap-1">
             <label for="quantity">Qty:</label>
-            <input id="qty_input" type="number" class="w-25  border border-secondary-subtle ps-1" value="1" max="<%= product.stock %>" id="quantity" name="quantity">
+            <input id="qty_input" type="number" class="QuantityInput w-25  border border-secondary-subtle ps-1" value="1" max="<%= product.stock %>" id="quantity" name="quantity">
         </div>
-        <div>
-            <p class="m-0" style="font-size: small;"> <strong>Delivery Address:</strong> <i>Tagoloan, Misamis Oriental 9001</i></p>
-            <p class="m-0" style="font-size: small;"> <strong>Phone Number:</strong> <i>09123455677</i></p>
-            
-        </div>
+        
 
         <form action="/checkout" method="post">
-                <div class="d-flex flex-column gap-2">
+            <div class="d-flex flex-column gap-2 DetailsButtonsCon">
                 <input type="hidden" id="productId" name="productId" value="<%= product.id %>">
                 <input type="hidden" id="productPrice" name="productPrice" value="<%= product.price %>">
                 <input type="hidden" id="productQty" name="productQty" value="1">
                 <input type="hidden" id="productTotal" name="total" value="<%= product.price %>">
-                <p id="total" class="m-0" style="font-size: medium;"><strong>Total:</strong> <i>&#8369;<%= product.price %></i></p>
-                <input id="add_cart_btn" type="button" class="btn btn-outline-success" value="Add Card">
-                <input type="submit" class="btn btn-outline-warning" value="Buy Now">
+                <p id="total" class="m-0 DetailsPrice" "><strong>Total:</strong> <i>&#8369; <%= product.price %></i></p>
+                <input type="button" class="btn  DetailsAddCartBut" value="Add Card">
+                <input type="submit" class="btn  DetailsBuyBut" value="Buy Now">
             </div>
         </form>
     </div>
-    <!--TODO: Ralated products -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--TODO: Related products -->
     <script src="/js/product.js"></script>
 </div>
 

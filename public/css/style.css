@@ -1,70 +1,413 @@
+
 body{
 	margin: 0;
 	padding: 0;
 	background-color: white!important;	
 }
+ 
+:root{
+    --black: #0F0F0F;
+    --darkgray: #1E1E24;
+    --red:  #AF1B3F;
+}
 
 #MainContainer{
 	width: 100%;	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.TopContainer {
+	width: 100%;
+	height: 30px;
+	background-color: var(--darkgray);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.TopConInnerCon{
+	width: 70%;
+	min-width: 900px;
+	display: flex;
+	align-items: center;
+	align-self: center;
+}
+
+.TopLeft{
+	width: 85%;
+	height: 100%;
 	float: left;
 }
 
-#TopContainer {
+.TopRight {
+	width: 15%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.MyAccountDropDown{
+	padding-top: 0;
+	padding-bottom: 0;
+	border-radius: 0;
+	width: 250px;
+	text-align: left;
+	margin-left: -150px !important;
+}
+.MyAccountDropDown a:hover{
+	font-weight: bold;
+}
+
+.UserName{
+	background: var(--red);
 	width: 100%;
-	height: 50px;
-	background: #1a1a1a;
+	color: white;
+	padding: 10px 20px;
+	font-weight: bold;
+}
+
+.LogoutBut{
+	width: 100%;
+	height: 40px;
+	background: none;
+	border: none;
+	border-top: 1px solid gray;
+	text-align:left;
+	padding-left: 20px;
+}
+.LogoutBut:hover{
+	background: var(--red);
+	color: white;
+	font-weight: bold;
+}
+
+.logoutmodal{
+	margin-top: 300px;
+}
+.closeLogout{
+	width: 40%;
+	border-radius: 0;
+	float: right;
+}
+.ConfirmLogoutBut{
+	width: 40%;
+	background-color: var(--red);
+	border-radius: 0;
+	float: left;
+	color: white;
+}
+.ConfirmLogoutBut:hover {
+	scale: 1.1;
+	background-color: var(--red);
+	color: white;
+}
+.closeLogout:hover {
+	scale: 1.1;
+}
+
+.modal-body p{
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+.TopLeft {
+	display: flex;
 	color: white;
 }
 
-#TopLeft{
-	width: 40%;
-	height: 100%;
-	float: left;;
+
+.MenuCon {
+	margin-right: 20px;
 }
 
-#TopRight {
-	width: 40%;
-	height: 100%;
-	float: right;
-}
-
-#TopLeft {
-	color: #cccccc;
-}
-
-#MenuCon {
-	display: inline-block;
-	width: 24%;
-
-}
-
-#MenuCon a {
+.MenuCon a {
 	text-decoration: none;
-	color: #cccccc;
+	color: white;
 	line-height: 3em;
 }
-#MenuCon a:hover {
-	color:  #00b300;
+.MenuCon a:hover {
+	color: var(--red);
 }
-#MenuName {
-
+.MenuName {
 	width: 100%;
 	height: 100%;
 	
 }
 
-#CheckoutButton {
-	width: 30%;
-	height: 100%;
-	float: right;
-	color:  #33ff33;
-	line-height: 4em;
-	font-family: "Arial", Gadget, sans-serif;
-	font-size: 12px;
+
+.SignupBut, .LoginBut{
+	width: 50%;
+	text-align: end;
 }
 
 
-#CartInfo {
+.SignupBut a, .LoginBut a{
+	text-decoration: none;
+	color: white;
+}
+
+.SignupBut a:hover, .LoginBut a:hover{
+	color: var(--red);
+}
+/* END   OF   HEADER ___________________________*/
+
+.LogoSearchCartCon {
+	width: 100%;
+	height: 100px;
+	font-family: "Arial", Helvetica, sans-serif;
+	font-size: 40px;
+	background-color: var(--black);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+.LogoSearchCartInnerCon{
+	width: 70%;
+	min-width: 900px;
+	display: flex;
+	align-items: center;
+	align-self: center;
+}
+.LogoImg {
+	width: 15%;
+	height: 100%;
+	float: left;
+	line-height: 2.5em;
+	flex:1;
+}
+
+.LogoImg img{
+	width: 90%;
+	min-width: 200px;
+
+}
+
+.SearchCartBox {
+	height: 100%;
+	font-size: 15px;
+	display: flex;
+	flex-wrap: nowrap !important;
+	align-items: center;
+	flex: 5;
+	padding-left:100px;
+}
+
+
+.SearchInputBox{
+	flex: 8;
+	display: flex;
+	margin-right: 100px;
+}
+
+.SearchInput {
+	flex: 5;
+	height: 45px;
+	border-radius: 0;
+	border: none;
+}
+.SearchBut {
+	flex: 1;
+	background-color: var(--red);
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 0;
+}
+.ListBut{
+	display: none;
+}
+.CartNotifBut{
+	background: none;
+	border: none;
+	flex: auto;
+	display: flex;
+	justify-content: center;
+}
+
+.CartNotif{
+	display: flex;
+	flex-wrap: wrap;
+	align-self: center;
+	border: 2px solid white;
+}
+
+.CartNotif:hover {
+	background: none;
+	color: var(--black) !important;
+	font-weight: bold;
+	background-color: var(--red);
+	border-color:var(--red);
+}
+
+.bi-cart-fill{
+	width: 35px;
+	font-size: 27px;
+	font-weight: bold;
+	color: white;
+}
+
+
+.CategListBut{
+	display: none;
+}
+
+
+
+.CategBut{
+	border: 2px solid white;
+	margin-left: 15%;
+	font-family: "Arial", Helvetica, sans-serif !important;
+	font-weight: bold !important;
+	font-size: 20px;
+	border-radius: 0 !important; 
+	background: none;
+}
+.btn {
+	font-weight: bold;
+	display: inline-block;
+	
+}
+.NavMenu{
+	width: 19%;
+	height: 100%;
+	display: inline-block;
+	
+}
+.DropdownCategory{
+	width: 100%;
+	margin-top: 27px !important;
+	padding: 20px;
+	border-radius: 0;
+	background-color: var(--red);
+	font-weight: bolder;
+}
+
+.categoryMenu{
+	width:  200px;
+	display: inline-block;
+	color: white !important;
+}
+.categoryMenu:hover {
+	background: none;
+	color: var(--black) !important;
+	font-weight: bold;
+}
+
+
+.ContentContainer{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* END   OF   LOGO SEARCH CON ___________________________*/
+.NavMenuMainBox{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--black);
+	border-bottom: 3px solid gray;
+}
+
+.CarouselNavBox{
+	width: 80%;
+	min-width: 900px;
+	display: flex;
+	align-items: center;
+	height: 60px;
+	align-self: center;
+}
+
+.NavMenuInnerBox{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.MenuCompressBox{
+	width: 90%;
+	min-width: 950px;
+	height: 60px;
+	align-self: center;
+}
+.NavLinkBox{
+	width: 100%;
+}
+.LinkBox{
+	float: left;
+	margin-left: 40px;
+	text-align: left;
+	margin-top: 20px !important;
+	
+}
+
+.NavLink{
+	color: white;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+.NavBut{
+	margin-top:-13px;
+}
+.prev{
+	width: 30px;
+	height: 30px;
+	display: none;
+	color: var(--red) !important;
+	margin-top:20px;
+}
+
+.next{
+	width: 30px;
+	height: 30px;
+	display: none;
+	margin-top:20px;
+}
+
+.NavLink:hover{
+	color: var(--red) !important;
+}
+
+.NavMenuMainBox:hover .next,.NavMenuMainBox:hover .prev {
+	display: inline-block;
+	color: var(--red) !important;
+	font-size: 30px;
+	opacity: 100%;
+}
+
+.SliderContainer{
+	height: 24.8vw;
+	width: 70%;
+	min-width: 600px;
+	min-height: 253px;
+	margin-left: 15%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.d-block{
+	height: 24vw !important;
+	min-height: 240px;
+} 
+
+.CartInfo {
 	width: 48%;
 	height: 100%;
 	line-height: 4em;
@@ -73,63 +416,11 @@ body{
 	font-family: "Arial", Gadget, sans-serif;
 	font-size: 12px;
 }
-.d-block{
-	height: 390px !important;
-} 
-#SliderContainer{
-	height: 400px;
-	width: 80%;
-	margin: 0 auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
-
-#ContentContainer{
-	width: 80%;
-	margin: 100px auto;
-}
-
-
-#SliderContainer{
-
-	
-}
-
-
-#SliderLeft{
-	width: 69%;
+.SliderLeft{
+	width: 100%;
 	height: 100%;
 	float: left;
 	padding: 5px;
-	border: 1px solid #ccccb3;
-	box-shadow: 4px 4px 4px #d6d6c2;
-}
-
-#SliderRight{
-	width: 29%;
-	height: 100%;
-	float: right;
-
-}
-#Menu1{
-	width: 96%;
-	height: 31.5%;
-	margin: 0 auto;
-	padding: 4px;
-	border: 1px solid #ccccb3;
-	box-shadow: 4px 4px 4px #d6d6c2;
-}
-#Menu1Img {
-	width: 100%;
-	height: 100%;
-	background: #cccccc;	
-}
-
-#Menu2{
-	width: 96%;
-	height: 31.5%;
-	margin: 10px auto;
-	padding: 4px;
 	border: 1px solid #ccccb3;
 	box-shadow: 4px 4px 4px #d6d6c2;
 }
@@ -146,206 +437,52 @@ body{
 	transform: scale(0.9);
 }
 
-#SlideImage{
-	width:100%;
-	height: 100%;
-	background: #cccccc;
-	margin: 0 auto;
-}
-
-
-#DetailsCon{
-	width: 45%;
-	height: 300px;
-	float: left;
-	text-align: justify;
-	
-}
-#DetailsCon b{
-	font-size: 30px;
-}
 .TitleCon {
 	text-align: justify;
 	text-transform:uppercase;
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 25px; 	
 }
 
-#TitleCon{
+.TitleCon{
 	width: 100%;
-	float: left;
-	border-bottom: 1px dotted  #4d4d4d;
 	font-family: "Arial" ,Helvetica, sans-serif;
-	font-weight: bold;
-	color: #666666;
+	font-weight: bolder;
+	color: var(--black);
 	padding-bottom: 5px;
 }
 
-
-
-#NavBar {
-	font-family: "Arial", Helvetica, sans-serif;
-	font-weight: bold;
-	width: 80%;
-	height: 50px;
-	margin: 20px auto;
-	background-color: #ffffe6;
-}
-
-#NavBar a{
-	text-decoration: none;
-	color: #333333;
-
-}
-.NavMenuLink:hover{
-	text-shadow: 0 0 1px #ff8533;
-}
-.CategBut{
-	background: none;
-	height: 50px !important; 
-	padding: 12px !important;
-	border: none;
-	margin-left: 15%;
-	font-family: "Arial", Helvetica, sans-serif !important;
-	font-weight: bold !important; 
-}
-.btn {
-	font-weight: bold;
-	display: inline-block;
-	
-}
-.NavMenu{
-	width: 19%;
-	height: 100%;
-	display: inline-block;
-	
-}
-.DropdownCategory{
-	width: 680px ;
-	margin-left: -10% !important;
-	/* margin-top: 20px !important; */
-	padding: 20px;
-}
-.categoryMenu{
-	width:  200px;
-	display: inline-block;
-}
-
-/*==================================================
- * Effect 7
- * ===============================================*/
-.effect7
-{
-    position:relative;
-    box-shadow:0 0px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
-.effect7:before, .effect7:after
-{
-	content:"";
-    position:absolute; 
-    z-index:-1;
-    box-shadow:0 0 5px rgba(0,0,0,0.5);
-    top:0;
-    bottom:0;
-    left:10px;
-    right:10px;
-    border-radius:100px / 10px;
-} 
-.effect7:after
-{
-    right:10px; 
-    left:auto; 
-    transform:skew(8deg) rotate(3deg);
-}
-
-
-#LogoContainer {
-	width: 80%;
-	height: 100px;
-	margin: 20px auto;
-	font-family: "Arial", Helvetica, sans-serif;
-	font-size: 40px;
-}
-#LogoImg {
-	width: 30%;
-	height: 100%;
-	float: left;
-	line-height: 2.5em;
-}
-
-#LogoImg img{
-	width: 90%;
-	min-width: 200px;
-}
-
-#LogoDetails {
-	width: 40%;
-	height: 100%;
-	float: left;	
-	line-height: 7em;
-	font-size: 15px;
-	font-weight: bold;
-	font-family: "Arial", Helvetica, sans-serif;
-	color: #333333;
-}
-#SearchBox {
-	width: 30%;
-	height: 100%;
-	float: right;	
-	font-size: 15px;
-}
-
-
-#SearchBoxIns {
+.ContentInnerCon{
 	width: 60%;
-	height: 30px;
-	float: left;
-	margin-left: 30px;
-	margin-top: 35px;
-	padding-left: 10px;
-	color: gray;
-	display: inline-block;
-	margin-right: 10px;
-}
-#SubmitBut {
-	width: 29%;
-	height: 30px;
-	display: inline-block;
-	float: right;
-	margin-top: 35px;
-	background: #00d1ea;
-	border: none;
-	border-radius: 4px;
-	font-weight: bold;
-	color: #1d1d1d;
+	align-self: center;
+	display: flex;
+	flex-direction: column;
 }
 
-#CartContainer {
+.CartContainer {
 	width: 100%;
 	margin-bottom: 50px;
-	float: left;
 	margin-top: 30px;
 	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 }
 
-#ContentContainer{
-	width: 80%;
-	float: left;
-	margin-left: 10%;
-	
+.m-auto{
+	width: 70%;
 }
-
 .CartBox{
 	width: 280px;
 	height: 460px;
-	float: left;
-	margin-left: 20px;
 	margin-bottom: 50px;
 	padding: 20px;
-	border: 1px solid #ccccb3;
+	border: 1px solid gray;
 }
 .CartBox:hover{
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border: 2px solid var(--red);
 	/* transform: scale(1.1); */
 }
 
@@ -387,7 +524,7 @@ body{
 	font-family: "Arial" ,Helvetica, sans-serif;
 	font-weight: bold;
 	font-size: 15px;
-	color: #ff8533;
+	color: var(--red);
 }
 .ProductRating{
 	float: right;
@@ -408,16 +545,14 @@ body{
 	border-radius: 2px;
 	margin-right: 5px;
 	font-weight: bold;
+	background: var(--red);
+	color: white;
 }
 
 .CartBut:hover, #WishBut:hover, #DetailsBut:hover {
 	border: 1px solid white;
 	
 }
-.CartBut{
-	background: #ff8533;
-}
-
 .CartBut:hover {
 	background: gray;
 	color: white;
@@ -511,4 +646,64 @@ body{
 	background: gray;
 	color: white;
 	
+}
+
+/* PRODUCT DETAILS CAROUSEL  WITH THUMBNAILS */
+
+@media only screen and (max-width: 1230px) {
+	
+	.CarouselNavBox{
+		width: 90%;
+	}
+
+		
+	.MenuCompressBox{
+		width: 100%;
+	}
+		
+}
+
+@media only screen and (max-width: 1230px) {
+
+		
+	.m-auto{
+		width: 85%;
+	}
+
+}
+@media only screen and (max-width: 1100px) {
+	
+	.CarouselNavBox{
+		width: 98%;
+	}
+		
+	.m-auto{
+		width: 90%;
+	}
+
+}
+@media only screen and (max-width: 1100px) {
+	
+	.CarouselNavBox{
+		display: none;
+	}
+		
+	.SearchCartBox {
+		height: 100%;
+		flex: 2;
+	}
+	.CategListBut{
+		display: flex;
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+		border: none;
+		background-color: var(--red);
+	}
+		
+	.ListBut{
+		display: flex;
+		
+	}
+
 }
