@@ -18,7 +18,7 @@ router.get('/', (req, res) =>{
         
         const data = productsDataArrayToObject(products)
         
-        res.render('products',  {categories: req.app.get('categories'), products: data})
+        res.render('products',  {userEmail: req.app.get('userEmail'),categories: req.app.get('categories'), products: data})
         
     })
     
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 
         const email = req.session.userEmail
        // console.log(product)
-        res.render('product_details', {product: data ,  userEmail: email } )
+        res.render('product_details', {product: data ,  userEmail: email, categories: req.app.get('categories') } )
         
     }).catch((err) =>{
         
