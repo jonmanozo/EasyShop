@@ -66,8 +66,17 @@ app.get('/' , (req, res) => {
  
 });
     
-app.get('/shippinginfo', (req, res) => {
-    res.render('shippinginfo');
+app.get('/shipping', (req, res) => {
+    
+    if(!req.session.user){
+        res.redirect('/login')
+        return
+    }
+
+    categoriesResult = app.get('categories')
+    userEmail = app.get('userEmail')
+
+    res.render('shippinginfo', {categories : categoriesResult , userEmail: userEmail});
 });
 
 app.get('/about', (req, res)=>{
