@@ -1,0 +1,57 @@
+
+.LoginCon{
+    width: 60%;
+    height: 760px;
+    float: left;
+    margin-left:20%;
+    border-radius: 20px;
+    margin-top: 120px;
+    margin-bottom: 200px;
+    background-color: white;
+	box-shadow: 4px 4px 4px #d6d6c2;
+
+}
+h4{
+    text-align: center;
+}
+
+.LoginLeftCon{
+    width: 50%;
+    float: right;
+    height: 100% !important;
+    background-color:#197BBD !important;
+    border-radius: 0px 20px 20px 0px;
+
+}
+
+        
+.LoginFormCon{
+    width: 40%;
+    margin: 5%;
+    float: left;
+
+}
+
+.RegisterHere{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.LogInBut{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.alert {
+    text-align: center;
+}
+
+
+
+.PasswordMustBe{
+    color: green;
+}
+
+.signUpModal{
+    margin-top: 400px;
+}
