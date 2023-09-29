@@ -40,7 +40,9 @@ router.post('/', (req, res)=>{
                                     }
                                 ).write()
                             })
-                        
+
+                            req.session.userEmail = Email
+                            const userEmail  = req.session.userEmail
                         res.redirect('/')
                     })
 

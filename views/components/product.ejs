@@ -1,13 +1,14 @@
 <div class="CartBox">
     <div class="CartImgBox">
-    <a href="/products/<%=product.id%>"><div id="CartImg"><img src="<%= product.image  %>" alt="" style="width: 100%; height: 100%;"></div></a>
+         <a href="/products/<%=product.id%>"><div class="CartImg"><img src="<%= product.image  %>" alt="" ></div></a>
     </div>
-    <div class="ProductName"><strong><%= product.title %></strong></div>
+    <div class="ProductName"><strong class="Ptitle"><%= product.title %></strong></div>
     <div class="ProductCartDetails">
         <div class="ProductPrice">&#8369; <%= product.price %>.00</div>
-        <div class="ProductRating"><%= product.rating %> % Ratings</div>
-        <div class="CartButCon">
-                <div class="CartBut"><center><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">Add to cart</span></center></div>
-        </div>
+        <div class="ProductRating"><%= product.rating %>  Ratings</div>
+    </div>    
+    <div class="CartButCon">
+            <div class="CartBut">Add to cart</div>
     </div>
+
 </div>		

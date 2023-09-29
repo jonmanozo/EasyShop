@@ -1,6 +1,6 @@
 
   <!-- Modal -->
-  <div class="modal fade logoutmodal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade logoutmodal" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         
@@ -19,9 +19,8 @@
         <div class="TopContainer">
               <div class="TopConInnerCon">
                 <div class="TopLeft">
-                    <div class="MenuCon"><a href="/"><div id="MenuName">Home</div></a></div>
+                    <div class="MenuCon HeaderHomeBut"><a href="/"><div id="MenuName">Home</div></a></div>
                     <div class="MenuCon"><a href="/products"><div id="MenuName">All Products</div></a></div>
-                    <div class="MenuCon"><div id="MenuName">Follow us on<a href="about.php"></a></a></div></div>
                 </div>
                 
                 <div class="TopRight">
@@ -30,7 +29,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">My Account</a>
                         <ul class="dropdown-menu MyAccountDropDown">
                           <li id="user_email" class="UserName"><%= locals.userEmail %></li>
-                          <li><a class="dropdown-item" href="/settings">Account Settings</a></li>
+                          <li><a class="dropdown-item" href="/Account_Settings">Account Settings</a></li>
                           <li><a class="dropdown-item" href="/shipping">Delivery Address</a></li>
                           <li> 
                             <button type="button" class="LogoutBut" data-bs-toggle="modal" data-bs-target="#exampleModal">

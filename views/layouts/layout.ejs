@@ -19,11 +19,15 @@
     <title>EasyShop</title>
 </head>
 <body>
-    <div id="MainContainer">
-        <%- include('../components/header')%>
-        <%- include('../components/logo_search')%>
-        <%- include('../components/nav_menu')%>
-        <%- body %>
+    <div class="MainContainer">
+        <div class="HeaderContainer">
+             <%- include('../components/header')%>        
+             <%- include('../components/logo_search')%>
+             <%- include('../components/nav_menu')%>
+        </div>
+        <div class="GlobalContentBox">
+            <%- body %>
+        </div>
         <%- include('../components/footer') %>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
