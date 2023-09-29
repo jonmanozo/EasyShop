@@ -36,7 +36,6 @@ router.get('/:id', (req, res) => {
 
         const email = req.session.userEmail
 
-        const cartCount = getCartCount(req.app, req.session.user)
 
        // console.log(product)
         res.render('product_details', {product: data ,  userEmail: email, categories: req.app.get('categories') } )

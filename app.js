@@ -5,6 +5,7 @@ const Promise = require('promise');
 const app = express();
 const loginRoute = require('./routes/login')
 const signUpRoute = require('./routes/signup')
+const AccountSettingsRoute = require('./routes/updateAccount')
 const categoryRoute = require('./routes/category')
 const {router , productsDataArrayToObject} = require('./routes/product')
 const cartRouter = require('./routes/cart')
@@ -44,6 +45,7 @@ app.get('/' , (req, res) => {
             const categoriesResult = result[1].data
 
             app.set('categories', categoriesResult)
+            app.set('products', productsResult)
             
             const featured = []
 
@@ -88,6 +90,8 @@ app.use('/category', categoryRoute.router)
 app.use('/login', loginRoute.router )
 app.use('/signup', signUpRoute.router)
 app.use('/cart', cartRouter.router)
+app.use('/cart', cartRouter.router)
+app.use('/Account_Settings', AccountSettingsRoute.router)
 
 app.post('/logout', (req, res) => {
     req.session.destroy(function(err) {
