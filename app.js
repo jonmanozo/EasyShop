@@ -9,6 +9,7 @@ const AccountSettingsRoute = require('./routes/updateAccount')
 const categoryRoute = require('./routes/category')
 const {router , productsDataArrayToObject} = require('./routes/product')
 const cartRouter = require('./routes/cart')
+const searchRouter = require('./routes/search')
 const bodyParser = require('body-parser')
 const session = require('express-session');
 
@@ -77,6 +78,7 @@ app.get('/shipping', (req, res) => {
 
     categoriesResult = app.get('categories')
     userEmail = app.get('userEmail')
+    req.session.cart = req.query
 
     res.render('shippinginfo', {categories : categoriesResult , userEmail: userEmail});
 });
@@ -87,6 +89,7 @@ app.get('/about', (req, res)=>{
 
 app.use('/products', router)
 app.use('/category', categoryRoute.router)
+app.use('/search', searchRouter.router)
 app.use('/login', loginRoute.router )
 app.use('/signup', signUpRoute.router)
 app.use('/cart', cartRouter.router)

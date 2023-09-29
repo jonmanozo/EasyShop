@@ -1,4 +1,4 @@
-.row {
+/* .row {
     display: -ms-flexbox; 
     display: flex;
     -ms-flex-wrap: wrap; 
@@ -6,7 +6,7 @@
     margin: 0 -16px;
     margin-top: 20px;
   }
-  
+   */
   .col-25 {
     -ms-flex: 25%; 
     flex: 25%;
@@ -54,7 +54,7 @@
     font-size: 24px;
   }
   
-  .btn {
+  /* .btn {
     background-color: #04AA6D;
     color: white;
     padding: 12px;
@@ -64,11 +64,11 @@
     border-radius: 3px;
     cursor: pointer;
     font-size: 17px;
-  }
+  } */
   
-  .btn:hover {
+  /* .btn:hover {
     background-color: #45a049;
-  }
+  } */
   
   span.price {
     float: right;
@@ -78,7 +78,7 @@
   
   @media (max-width: 800px) {
     .row {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
     .col-25 {
       margin-bottom: 20px;
