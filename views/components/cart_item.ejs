@@ -1,0 +1,26 @@
+<div class="cart_item border-bottom p-2">
+    <input type="hidden" name="id" value="<%= item.id %>">
+    <div class="row">
+        <div class="col-5"> 
+            <div class="d-flex gap-5 "  >
+                <img src="<%= item.img %>" style="height: 6em; width: 6em;">
+                <h3 class="mt-auto mb-auto"><%= item.title %></h3>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <h5 class="mt-auto mb-auto">&#8369; <%= new Intl.NumberFormat().format(item.price) %> </h5>
+        </div>
+        <div class="col d-flex">
+
+            <div class="mt-auto mb-auto d-flex">
+                <input type="button" id="decrement_qty" class="decrement_qty rounded-start-pill border p-2" value="-">
+                <input type="text" id="input_qty" class=" w-25 text-center bg-body-secondary border border-0 " name="qty" value="<%= item.qty %>" readonly> 
+                <input type="button" id="increament_qty" class="increament_qty rounded-end-pill border p-2" value="+">
+            </div>
+        </div>
+        <div class="col d-flex gap-2">
+            <h5 class="mt-auto mb-auto">&#8369; <%= new Intl.NumberFormat().format(item.total)  %></h5>
+            <input class="btn btn-close mt-auto mb-auto " type="button">
+        </div>
+    </div>
+</div>

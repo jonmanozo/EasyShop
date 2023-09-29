@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
                             res.send('Something went wrong');
     
                         }
-                        console.log(req.session.user)                       
+                       // console.log(req.session.user)                       
 
                         res.redirect('/')
 

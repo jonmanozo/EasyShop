@@ -5,8 +5,9 @@ const Promise = require('promise');
 
 router.get('/', (req, res) => {
     const db = req.app.get('DB')
-
-    const carts = db.get('carts').find({cartId: 1695368561049}).get('cart').value()
+    
+    const carts = db.get('carts').find({cartId: 1695454069035}).get('cart').value()
+    
     const productRequest = []
     
     for (const product of carts) {
@@ -14,19 +15,80 @@ router.get('/', (req, res) => {
     }
     
     Promise.all(productRequest).then(function (result){
-        
+        // get image, name, price 
+        const products = []
+        let totalAmount = 0; 
         
         result.forEach((val, index) =>{
-            console.log(val.data)
+            const price = val.data.price
+            const qty = carts[index].productQty
+            const total = qty * price
+            // console.log(carts[index].productQty)
+            //console.log(val.data.title) // val.data.title, val.data.thumbnail, val.data.price
+            products.push({
+                id : val.data.id,
+                title : val.data.title,
+                img : val.data.thumbnail,
+                price: price,
+                qty: qty, 
+                total: total, 
+            })      
+            totalAmount += total
         })
     
         
-        console.log('Done')
+        // console.log(products)
+        res.render('cart', {categories : req.app.get('categories'), cartItem: products, total: totalAmount ,userEmail: req.app.get('userEmail')})
+    })
+})
+
+router.post('/all', (req, res) =>{
+    
+    const db = req.app.get('DB')
+    
+    const user =  db.get('users').find({email: req.body.user}).value()
+    
+    if(!user){
+        res.json({message: 'No user found!'})
+        return
+    }
+    
+    const carts = db.get('carts').find({cartId: user.id}).get('cart').value()
+    
+    const productRequest = []
+    
+    for (const product of carts) {
+        productRequest.push(axios.get(`https://dummyjson.com/products/${product.productId}`))
+    }
+    
+    Promise.all(productRequest).then(function (result){
+        // get image, name, price 
+        const products = []
+        let totalAmount = 0; 
+        
+        result.forEach((val, index) =>{
+            const price = val.data.price
+            const qty = carts[index].productQty
+            const total = qty * price
+            // console.log(carts[index].productQty)
+            //console.log(val.data.title) // val.data.title, val.data.thumbnail, val.data.price
+            products.push({
+                id : val.data.id,
+                title : val.data.title,
+                img : val.data.thumbnail,
+                price: price,
+                qty: qty, 
+                total: total, 
+            })      
+            totalAmount += total
+        })
+
+        res.json(products)
     })
 
-    
-    res.render('cart')
 })
+
+
 
 router.post('/', (req, res) => {
     
@@ -43,7 +105,7 @@ router.post('/', (req, res) => {
     const carts = db.get('carts').find({cartId: user.id}).value()
 
     if(carts){
-        
+        //TODO: remove price later
         const data = {
             productId: req.body.prodId,
             productPrice: req.body.prodPrice,
@@ -57,7 +119,7 @@ router.post('/', (req, res) => {
             db.get('carts').find({cartId: user.id}).get('cart').push(data).write()
             
             const cartItemCount = getCartCount(req.app, req.session.user)
-            console.log(cartItemCount)
+            //console.log(cartItemCount)
             res.json({code: 1, message: 'Success', cartItemCount: cartItemCount, user: req.session.user})
            
             return
@@ -67,10 +129,17 @@ router.post('/', (req, res) => {
         }
     }
     
-    
-    
-    
 })
+
+router.delete('/', (req, res) =>{
+    console.log(req.body)
+    res.json('deleted')
+})
+
+router.post('/checkout', (req, res) =>{
+    res.send(req.body)
+})
+
 
 function getCartCount(app, usr){
 
