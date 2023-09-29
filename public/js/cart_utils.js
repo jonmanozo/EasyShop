@@ -1,4 +1,3 @@
-
 export function createCartItem(parent, id, product_img, product_title, product_qty, product_price, callback){
 
     const productTotal = product_qty * product_price
@@ -26,10 +25,14 @@ export function createCartItem(parent, id, product_img, product_title, product_q
                 "Content-Type": "application/json",
             },
             body : JSON.stringify({productId : idContainer.value})
-        }).then()
+        }).then(res => res.json()).then(result => {
+            if(result.statusCode == 200){
+                window.location.reload()
+            }
+        })
         
 
-        parent.removeChild(cartItemContainer)
+        
     })
 
     const qtyInputContainer = createQtyElement(product_qty, function(value){

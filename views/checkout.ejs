@@ -1,0 +1,72 @@
+
+<div class="container">
+        <div class="border m-auto p-3" style="width: 45%;" >
+            <div class="d-flex justify-content-between">
+                <p  class="flex-fill display-6 m-0">Cash On Delivery</p>
+                <div class="m-auto text-center" style="width: 10%;" >
+                    <input type="radio" name="cod" checked>
+                </div>
+            </div>
+            <div class="border mt-2"></div>
+            
+            <div class="mt-3 mb-1 ps-1 pe-1">
+            
+                <% if(!Array.isArray(products)) { %>
+
+                    <div class="d-flex gap-3" >
+                        <p class="flex-fill h5 text-center"><%= products.qty %></p>
+                        <p class="flex-fill h5"><%= products.title %></p>
+                        <p class="flex-fill h5 text-end">&#8369;<%= new Intl.NumberFormat().format(products.total) %></p>
+                    </div>
+               <% } else { %>
+                    <% locals.products.forEach((item) => { %>
+                        
+                        <div class="d-flex justify-content-between gap-3" >
+                            <p class=" h5 text-center"><%= item.qty %></p>
+                            <p class=" h5"><%= item.title %></p>
+                            <p class=" h5 text-end">&#8369; <%= new Intl.NumberFormat().format(item.total) %></p>
+                        </div>
+
+                   <% }) %>
+                   
+               <% }%>
+
+            <div class="border mt-2"></div>
+            
+        </div>
+        <div>
+                
+            <div class="row">
+                <div class="col">
+                    <p class="display-6 fs-2 text-end">Order Total:</p>
+                  </div>
+                  <div class="col">
+                      <p class="display-6 fs-2 text-end">&#8369; <%= new Intl.NumberFormat().format(totals.order) %></p>
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p class="display-6 fs-2 text-end">Delivery Fee:</p>
+                  </div>
+                  <div class="col">
+                      <p class="display-6 fs-2 text-end">&#8369; <%= new Intl.NumberFormat().format(totals.shipping) %></p>
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p class="display-6 fs-2 text-end">Total:</p>
+                   
+                  </div>
+                  <div class="col">
+                      <p class="display-6 fs-2 text-end">&#8369; <%= new Intl.NumberFormat().format(totals.totalAmount)  %></p>
+                  </div>
+            </div>
+            <button class="btn btn-outline-success "> Confirm Order</button>
+        </div>
+
+
+
+    </div>
+</div>

@@ -12,12 +12,10 @@ window.onload = () =>{
     const user = userContainer.innerText
 
     fetch(`${window.location.origin}/cart/all`,{
-        method: "POST",
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
-        body : JSON.stringify({user : user})
-
     })
     .then((res) => res.json())
     .then((data) => {
@@ -42,7 +40,6 @@ window.onload = () =>{
                     totalContainer.innerHTML = new Intl.NumberFormat().format(total)
                 })
             })
-
             cartContainer.appendChild(product.create())
         });
     });

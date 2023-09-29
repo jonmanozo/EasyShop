@@ -1,5 +1,5 @@
 
-    <div>
+    <div class="container">
         <div class="cart_item_container d-flex flex-column gap-3">
             <div class="row border-bottom">
                 <div class="col-5"> <p class="h5">Item</p></div>
@@ -9,10 +9,17 @@
                 
             </div>
 
-            <form action="/cart/checkout" method="post">
+            <form action="/shipping">
                 <div id="cartContainer"></div>
-                <h3 id="total"></h3>
-                <input type="submit" value="checkout">
+
+                <div class="d-flex gap-2 justify-content-end">
+                    <p class="lead text-center">Total:</p>
+                    <div>
+                        
+                        <h3 id="total"></h3>
+                        <input type="submit" value="checkout" class="btn btn-outline-success">
+                    </div>
+                </div>
             </form>
     </div>
     </div>

@@ -1,8 +1,36 @@
 {
   "users": [
-
+    {
+      "id": 1695977644297,
+      "fName": "Noemito  John",
+      "lName": "Lacanaria",
+      "email": "test@gmail.com",
+      "password": "$2b$10$LiqTIJrm3MSK8tsB3yOch.r3iU9UktgWnx9xTyPfRe4zIT6n.eamK"
+    }
   ],
   "carts": [
-
+    {
+      "cartId": 1695977644297,
+      "cart": [
+        {
+          "productId": 3,
+          "productPrice": 1249,
+          "productQty": 13,
+          "productTotal": 16237
+        },
+        {
+          "productId": 55,
+          "productPrice": 66,
+          "productQty": 15,
+          "productTotal": 990
+        },
+        {
+          "productId": 20,
+          "productPrice": 70,
+          "productQty": 12,
+          "productTotal": 840
+        }
+      ]
+    }
   ]
 }
