@@ -45,7 +45,8 @@ router.post('/', (req, res) => {
                     req.session.user = userInfo
 
                     req.session.userEmail = userInfo.email
-                    const userEmail  = req.session.userEmail
+                    req.session.userFname = userInfo.fName
+                    req.session.userLname = userInfo.lName
                     req.session.save(function(err){
 
                         if(err) {

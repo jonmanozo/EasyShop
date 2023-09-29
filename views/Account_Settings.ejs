@@ -3,11 +3,67 @@
 
     <div class="SignUpFormCon">
         <div class="SignUpTitle">
-            <p>ACCOUNT SETTINGS</p>
-     
+            <p>ACCOUNT INFORMATION</p>
+            <%- locals.alert %>
         </div>
-   
+
+        <div class="form-outline mb-4 SignupInput">
+          <div class="CurrentEMail"><strong style="margin-right: 10px;">Email Address :</strong> <%= locals.userEmail %></div>
+          <div class="FullName"><strong style="margin-right: 10px;"> Name :</strong> <%= locals.FName %> <%=  locals.LName  %></div>
+      </div>
     </div>
 
+    <div class="SignUpFormCon">
+      <div class="SignUpTitle">
+        <p>CHANGE EMAIL</p>
+      </div>
+      
+      <%- locals.UpdateEmailAlert %>
+        <form class="SignUpFormBox" action="/Account_Settings/ChangeEmail" method="POST">
+               
+              
+              <div class="form-outline mb-4 SignupInput">
+              
+                <input type="Email" name="ChangeEmail" id="ChangeEmail" class="form-control"
+                    placeholder="Enter New Email" required />   
+              </div>
+              <div class="form-outline mb-4 SignupInput">
+                <input type="password" name="Password" id="Password" class="form-control" placeholder="Enter Your Password"  required />
+            </div>
+            
+              <div class="text-center pt-1 mb-5 pb-1 SignupInput ">
+                <button class="col-sm-12 btn btn-primary SingUpBut " type="submit">Change Email Address</button>
+              </div>
+        </form>
+      </div>
 
+  <div class="SignUpFormCon">
+        <div class="SignUpTitle">
+          <p>CHANGE PASSWORD</p>
+        </div>
+        
+        <%- locals.alertChangePass %>
+        <form class="SignUpFormBox" action="/Account_Settings/ChangePassword" method="POST">
+            <div class="form-outline mb-4 SignupInput">
+                <input type="password" name="OldPassword" id="OldPassword" class="form-control" placeholder="Enter Old Password"  required />
+            </div>
+            
+            <div class="form-outline mb-4 SignupInput">
+                <input type="password" name="NewPassword" id="NewPassword" class="form-control" placeholder="Enter New Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+                <p class="PasswordMustBe"><i>Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</i></p>
+            </div>
+
+              <div class="form-outline mb-4 SignupInput">
+                <input type="password" name="RepeatPass" id="ConfirmPass" class="form-control" placeholder="Repeat New Password" required/>
+              
+              </div>
+
+              <div class="text-center pt-1 mb-5 pb-1 SignupInput ">
+                <button class="col-sm-12 btn btn-primary SingUpBut " type="submit">Change Password</button>
+              </div>
+        </form> 
+ 
+
+  </div>
 </div>
