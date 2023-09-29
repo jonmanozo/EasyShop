@@ -3,6 +3,7 @@ body{
 	margin: 0;
 	padding: 0;
 	background-color: white!important;	
+	min-width: 280px;
 }
  
 :root{
@@ -11,13 +12,28 @@ body{
     --red:  #AF1B3F;
 }
 
-#MainContainer{
-	width: 100%;	
+.MainContainer{
+	width: 100% !important;	
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
-
+.GlobalContentBox{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 220px;
+}
+.HeaderContainer{
+	width: 100%;
+	position: fixed;
+	display: flex;
+	top: 0;
+	z-index: 3;
+	flex-direction: column;
+}
 .TopContainer {
 	width: 100%;
 	height: 30px;
@@ -38,11 +54,12 @@ body{
 .TopLeft{
 	width: 85%;
 	height: 100%;
-	float: left;
+	display: flex;
 }
 
-.TopRight {
-	width: 15%;
+.TopRight{
+	width: 20%;
+	min-width: 150px;
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -54,7 +71,6 @@ body{
 	border-radius: 0;
 	width: 250px;
 	text-align: left;
-	margin-left: -150px !important;
 }
 .MyAccountDropDown a:hover{
 	font-weight: bold;
@@ -86,6 +102,9 @@ body{
 .logoutmodal{
 	margin-top: 300px;
 }
+.fade {
+	z-index: 2;
+}
 .closeLogout{
 	width: 40%;
 	border-radius: 0;
@@ -112,11 +131,6 @@ body{
 	font-weight: bold;
 	font-size: 20px;
 }
-.TopLeft {
-	display: flex;
-	color: white;
-}
-
 
 .MenuCon {
 	margin-right: 20px;
@@ -155,7 +169,6 @@ body{
 
 .LogoSearchCartCon {
 	width: 100%;
-	height: 100px;
 	font-family: "Arial", Helvetica, sans-serif;
 	font-size: 40px;
 	background-color: var(--black);
@@ -163,6 +176,7 @@ body{
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+	
 }
 .LogoSearchCartInnerCon{
 	width: 70%;
@@ -170,22 +184,23 @@ body{
 	display: flex;
 	align-items: center;
 	align-self: center;
+	
 }
 .LogoImg {
 	width: 15%;
 	height: 100%;
-	float: left;
 	line-height: 2.5em;
 	flex:1;
 }
 
 .LogoImg img{
 	width: 90%;
-	min-width: 200px;
+	min-width:200px;
 
 }
 
 .SearchCartBox {
+	width: 100%;
 	height: 100%;
 	font-size: 15px;
 	display: flex;
@@ -202,11 +217,21 @@ body{
 	margin-right: 100px;
 }
 
+.SearchInputBox2{
+	flex: 8;
+	display: flex;
+}
+
 .SearchInput {
 	flex: 5;
 	height: 45px;
 	border-radius: 0;
 	border: none;
+}
+.SearchInput2{
+
+	border: 2px solid var(--red);
+	border-radius: 0;
 }
 .SearchBut {
 	flex: 1;
@@ -216,7 +241,33 @@ body{
 	border: none;
 	border-radius: 0;
 }
+.SearchBut2 {
+	flex: 1;
+	background-color: white;
+	color: var(--red);
+	font-weight: bold;
+	border: none;
+	border-radius: 0;
+	border: 2px solid var(--red);
+}
+.SearchButIcoBox{
+	display: none;
+}
+.SearchButIcoBox:hover{
+}
+.SearchButIco{
+	
+	color: white;
+}
+.SearchButIco:hover{
+	color: white;
+	
+	background-color: var(--red);
+}
 .ListBut{
+	display: none;
+}
+.HomeIcoBox{
 	display: none;
 }
 .CartNotifBut{
@@ -234,9 +285,9 @@ body{
 	border: 2px solid white;
 }
 
-.CartNotif:hover {
+.CartNotif:hover, .HomeIcoBox:hover {
 	background: none;
-	color: var(--black) !important;
+	color: white !important;
 	font-weight: bold;
 	background-color: var(--red);
 	border-color:var(--red);
@@ -250,11 +301,9 @@ body{
 }
 
 
-.CategListBut{
+.CategListBut, .HomeIcoBox{
 	display: none;
 }
-
-
 
 .CategBut{
 	border: 2px solid white;
@@ -270,15 +319,18 @@ body{
 	display: inline-block;
 	
 }
-.NavMenu{
-	width: 19%;
-	height: 100%;
-	display: inline-block;
-	
-}
 .DropdownCategory{
 	width: 100%;
-	margin-top: 27px !important;
+	margin-top: 23px !important;
+	padding: 20px;
+	border-radius: 0;
+	background-color: var(--red);
+	font-weight: bolder;
+	scrollbar-gutter: auto;
+}
+.DropdownSearch{
+	width: 100%;
+	margin-top: 23px !important;
 	padding: 20px;
 	border-radius: 0;
 	background-color: var(--red);
@@ -286,7 +338,7 @@ body{
 }
 
 .categoryMenu{
-	width:  200px;
+	width:  150px;
 	display: inline-block;
 	color: white !important;
 }
@@ -294,14 +346,6 @@ body{
 	background: none;
 	color: var(--black) !important;
 	font-weight: bold;
-}
-
-
-.ContentContainer{
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 }
 
 
@@ -320,7 +364,13 @@ body{
 	flex-direction: column;
 	justify-content: center;
 	background-color: var(--black);
-	border-bottom: 3px solid gray;
+}
+
+.NavMenu{
+	width: 19%;
+	height: 100%;
+	display: inline-block;
+	
 }
 
 .CarouselNavBox{
@@ -395,10 +445,7 @@ body{
 .SliderContainer{
 	height: 24.8vw;
 	width: 70%;
-	min-width: 600px;
-	min-height: 253px;
 	margin-left: 15%;
-	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
@@ -437,19 +484,17 @@ body{
 	transform: scale(0.9);
 }
 
-.TitleCon {
-	text-align: justify;
-	text-transform:uppercase;
-	font-weight: bold;
-	font-size: 25px; 	
-}
-
 .TitleCon{
 	width: 100%;
 	font-family: "Arial" ,Helvetica, sans-serif;
 	font-weight: bolder;
 	color: var(--black);
 	padding-bottom: 5px;
+	text-align: justify;
+	text-transform:uppercase;
+	font-weight: bold;
+	font-size: 25px; 
+	text-align: center;
 }
 
 .ContentInnerCon{
@@ -459,25 +504,37 @@ body{
 	flex-direction: column;
 }
 
-.CartContainer {
+.ContentContainer{
 	width: 100%;
-	margin-bottom: 50px;
-	margin-top: 30px;
-	padding: 10px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	justify-content: center;
+	align-self: self-end;
+	align-items: center;
+}
+
+
+
+.InnerCon{
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+}
+.CartMainBox{
+	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
-
-.m-auto{
-	width: 70%;
-}
 .CartBox{
-	width: 280px;
-	height: 460px;
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	height: 440px;
 	margin-bottom: 50px;
-	padding: 20px;
+	padding: 10px;
 	border: 1px solid gray;
 }
 .CartBox:hover{
@@ -487,38 +544,48 @@ body{
 }
 
 .CartImgBox{
-	width: 250px;
+	display: flex;
+	justify-content: center;
+	width: 100% !important;
 	height: 270px;
-	float: left;
-	padding: 4px;
-
+	padding: 5px;
+}
+.CartImgBox a{
+	width: 100%;
+	height: 270px;
 }
 /* 
 .CartImgBox:hover{
 	transform: scale(1.2);
 } */
 
-#CartImg {
+.CartImg {
 	width: 100%;
 	height: 100%;
 	background: #cccccc;
 }
+.CartImg img {
+	width: 100%;
+	height: 270px;
+}
 .ProductName {
-	float: left;
+	height: 150px;
 	padding: 3px;
 	width: 100%;
-	height: 50px;
 	margin-top: 15px;
 	font-family: "Arial" ,Helvetica, sans-serif;
 	font-size: 13px;
 	color: #4d4d4d;
 }
+.Ptitle{
+	width: 100%;
+	height: 150px;
+}
 .ProductCartDetails{
-	float: left;
+	display: flex;
 	width: 100%;
 }
 .ProductPrice {
-	float: left;
 	padding: 2px;
 	width: 50%;
 	font-family: "Arial" ,Helvetica, sans-serif;
@@ -527,7 +594,6 @@ body{
 	color: var(--red);
 }
 .ProductRating{
-	float: right;
 	width: 45%;
 	text-align: end;
 	margin-right: 10px;
@@ -564,73 +630,99 @@ body{
 }
 
 
-#footer{
+.footer{
 	width: 100%;
-	height: 300px;
 	background: #1a1a1a ;
-	float: left;
+	display: flex;
+	justify-content: center;
 }
 
-#FooterContent{
-	width: 80%;
+.FooterContent{
+	width: 70%;
 	height: 100%;
-	float: left;
-	margin-left: 10%;
-	
+	display: flex;
+	margin-left: 5%;
+	flex-direction: column;
 }
 
-#UseFullCon, #ContactInfoCon, #NewsLetterCon{
-	width: 33%;
+.UseFullCon{
 	height: 100%;
-	float: left;
+	display: flex;
+	justify-content: space-evenly;
+}
+.FooterCopyright{
+	color: white;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	padding-bottom: 15px;
+	font-style: italic;
+}
+.FooterBrand{
+	display: flex;
+	font-weight: bold;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 50px;
+	font-style: italic;
+	color: var(--red);
+	width: 100%;
+	justify-content: center;
+	margin-bottom: -10px;
 }
 
-#FooterTitle {
+.FooterLinks {
+	width: 40%;
 	color: white;
 	padding:  20px;
 	font-family: "Arial", Helvetica,sans-serif;
 	font-weight: bold;
+	display:flex;
+	flex-direction: column ;
+} 
+
+.FooterContact {
+	color: white;
+	padding:  20px;
+	font-family: "Arial", Helvetica,sans-serif;
+	font-weight: bold;
+	display:flex;
+	flex-direction: column ;
+} 
+.FooterContact strong{
+	margin-left: 30px;
 }
 
-#UseFullCon a {
+.UseFullCon a {
 	text-decoration: none;
 }
 
-#Links{
+.Links{
 	color: white;
 	margin-left: 10%;
 	padding: 10px;
-	border-bottom: 1px dotted gray;
 }	
-
-#ContactInfo {
+.FooterLinks i{
+	color: var(--red);
+	font-size: 30px;
+}	
+.FooterLinks a{
+	display: flex;
+}
+.ContactInfoCon{
+	width: 40%;
+	display: flex;
+}
+.ContactInfo {
 	color: white;
 	font-family: "Arial" ,Helvetica, sans-serif;
 	padding: 10px;
+	padding-left: 0;
 	margin-left: 30px;
 	font-size: 15px;
 	border-bottom: 1px dotted gray;
 }
 
-#emailnew{
-	margin-left: 40px;
-	margin-bottom: 10px;
-	width: 300px;
-	height: 30px;
-	padding-left: 10px;
-	border-radius: 4px;
-	border: none;
-}
-
-#textarea{
-	margin-left: 40px;
-	width: 300px;
-	height: 150px;
-	padding-left: 10px;
-}
-
-
-#SubBut{
+.SubBut{
 	width: 100px;
 	height: 30px;
 	margin-left: 40px;
@@ -642,7 +734,7 @@ body{
 	font-weight: bold;
 }
 
-#SubBut:hover {
+.SubBut:hover {
 	background: gray;
 	color: white;
 	
@@ -660,37 +752,51 @@ body{
 	.MenuCompressBox{
 		width: 100%;
 	}
-		
+	
 }
 
-@media only screen and (max-width: 1230px) {
+@media only screen and (max-width: 1450px) {
 
-		
-	.m-auto{
+	
+	.InnerCon{
 		width: 85%;
 	}
 
 }
-@media only screen and (max-width: 1100px) {
-	
-	.CarouselNavBox{
-		width: 98%;
-	}
+
+
+
+@media only screen and (max-width: 1180px) {
 		
-	.m-auto{
+	.FooterContent{
 		width: 90%;
 	}
 
+
+	.CartBox{
+		height: 420px;
+	}
 }
 @media only screen and (max-width: 1100px) {
 	
+	.GlobalContentBox{
+		margin-top: 150px;
+	}
+
+	.InnerCon{
+		width: 90%;
+	}
+	
+
 	.CarouselNavBox{
+		width: 98%;
 		display: none;
 	}
 		
 	.SearchCartBox {
+		display: flex;
+		width: 100%;
 		height: 100%;
-		flex: 2;
 	}
 	.CategListBut{
 		display: flex;
@@ -700,10 +806,321 @@ body{
 		border: none;
 		background-color: var(--red);
 	}
-		
+	
+	.CategBut{
+		margin: 0;
+		margin-right: 8px;
+	}
 	.ListBut{
 		display: flex;
 		
 	}
 
+}
+
+@media only screen and (max-width: 1000px) {
+
+	.GlobalContentBox{
+		margin-top: 130px;
+	}
+
+	.SearchCartBox {
+		height: 100%;
+		font-size: 15px;
+		display: flex;
+		flex-wrap: nowrap !important;
+		align-items: center;
+		width: 300px;
+		padding-left:0 !important;
+	}
+	
+	.MainContainer{
+		width: 100% !important;
+	}
+	.InnerCon{
+		width: 100%;
+	}
+	.CartBox{
+		height: 440px;
+	}
+	.TopConInnerCon{
+		width: 100%;
+		padding: 0 20px;
+	}
+	.SearchInputBox{	
+		display: none !important;
+	}
+	.TopConInnerCon{
+		min-width: 400px;
+	}
+	.SearchButIcoBox{
+		display: inline;
+	}
+	.LogoSearchCartInnerCon{
+		min-width: 400px;
+	}
+	.SearchButIco{
+		border: 2px solid white;
+		margin-right: 8px;
+		font-family: "Arial", Helvetica, sans-serif !important;
+		font-weight: bold !important;
+		font-size: 20px;
+		border-radius: 0 !important; 
+		background: none;
+			
+	}
+	.SearchCartBox{
+		width:100%;
+		display: flex;
+		align-items: end !important;
+		justify-content: end;
+	}
+	.SliderContainer{
+		width: 100%;
+		margin-left: 0;
+		height: 34vw;
+	}
+	.carousel-item img{
+		height: 38vw !important; 
+	}
+	.SliderLeft{
+		padding: 0;
+		background: none;
+		box-shadow: none;
+		border: none;
+		min-height: 150px;
+		min-width: 150px !important;
+	}
+	.LogoSearchCartInnerCon{
+		width: 100%;
+		padding: 0 5%;
+	}
+	
+}
+
+
+@media only screen and (max-width: 800px) {
+	
+	.InnerCon{
+		width: 100%;
+	}
+		
+	.CartImgBox{
+		padding: 0;
+	}
+	.CartImgBox a{
+		width: 100%;
+		height: 120px;
+	}
+	.CartBox{
+		width: 150px;
+		height: 280px;
+		padding: 10px;
+		padding: 3px !important;
+		border: 1px solid gray;
+	}
+
+	.CartImg img {
+		height: 120px;
+	}
+	.ProductName {
+		height: 100px;
+		padding: 3px;
+		width: 100%;
+		margin-top: 5px;
+	}
+	/* .Ptitle{
+		width: 100%;
+		height: 150px;
+	} */
+	.ProductCartDetails{
+		width: 100%;
+	}
+	.ProductPrice {
+		padding: 2px;
+		width: 100%;
+	}
+	.ProductRating{
+		width: 100%;
+		text-align: end;
+		margin-right: 10px;
+	}
+	
+	.CartButCon {
+		width: 100%;
+		height: 30px;
+	}
+	
+	.CartBut {
+		width: 100%;
+		height: 30px;
+		border-radius: 2px;
+		margin: 0;
+		text-align: center;
+		padding: 3px 3px;
+	}
+	
+	.CartBut:hover, #WishBut:hover, #DetailsBut:hover {
+		border: 1px solid white;
+		
+	}
+	.CartBut:hover {
+		background: gray;
+		color: white;
+	}
+		
+	.ProductCartDetails{
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+	}
+	.ProductPrice {
+		width: 50%;
+	}
+	.ProductRating{
+		width: 100%;
+		text-align: left;
+	}
+		
+	.TitleCon{
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	.ProductName {
+		text-align: center;
+	}
+	
+	.FooterLinks{
+		width: 20%;
+	}
+	.Links{
+		display: none;
+	}
+	.ContactInfoCon{
+		width: 70%;
+	}
+}
+@media only screen and (max-width: 600px) {
+	
+	.FooterBrand{
+		font-size: 30px;
+	}
+	.FooterContent{
+		width: 100%;
+	}
+
+	.d-block{
+		height: 24vw !important;
+		min-height: 150px;
+	} 
+	
+	.FooterContent{
+		width: 100%;
+	}
+
+
+}
+
+@media only screen and (max-width: 550px) {
+    
+    .LoginCon, .SignupCon{
+        padding: 0;
+    }
+    .LoginFormCon, .SignUpFormCon{
+        width: 100%;
+        min-width: 300px;
+    }
+    .TopContainer{
+        min-width: 380px;
+    }
+}
+@media only screen and (max-width: 500px) {
+	.FooterLinks{
+		width: 10%;
+	}
+
+}
+
+@media only screen and (max-width: 450px) {
+
+	.LogoSearchCartInnerCon{
+		flex-direction: column !important;
+		padding: 0;
+	}
+
+	.SearchCartBox {
+		width: 100%;
+		height: 100%;
+		font-size: 15px;
+		display: flex;
+		flex: 1;
+		flex-wrap: nowrap !important;
+		align-items: center;
+		justify-content: space-evenly;
+		padding: 0;
+	}
+	.HomeIcoBox{
+		display: flex;
+		color: white;
+	}
+	
+	.HomeIcoBox a{
+		font-size: 20px;
+		color: white;
+	}
+	.CartNotif, .SearchButIco, .CategBut{
+		border: none;
+	}
+	/* .CartNotifBut{
+	
+	}
+	.CategBut{
+		
+	}
+	
+	.SearchBut {
+	
+	} */
+	.LogoImg {
+		width: 100%;
+		height: 100%;
+		flex:1;
+		line-height: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	.LogoImg img{
+		width: 60%;
+
+	}
+	
+	.DropdownCategory{
+		margin-top: -5px !important;
+	}
+	.DropdownSearch{
+		margin-top: -5px !important;
+		padding: 5px;
+	}
+	.HeaderHomeBut{
+		display: none;
+	}
+
+	.TopLeft,.TopRight{
+		justify-content: center;
+	}
+	.TopRight{
+		width: 100%;
+		text-align: center;
+	}
+	.LoginBut, .SignupBut{
+		text-align: left;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	
+	.ContentContainer{
+		margin-top: 30px;
+	}
 }
