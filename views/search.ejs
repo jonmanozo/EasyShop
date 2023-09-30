@@ -1,0 +1,9 @@
+<div class="InnerCon">
+    <div  class="TitleCon" style="margin-top: 50px;">All product</div>
+
+    <div class="d-flex flex-wrap gap-1 justify-content-center mt-3">
+        <% products.forEach((item)=>{ %>
+            <%- include('components/product', {product: item}) %>
+        <% }) %>
+    </div>
+</div>
